@@ -36,5 +36,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-graphql-codegen`,
+    `gatsby-plugin-ts-config`,
   ],
 }

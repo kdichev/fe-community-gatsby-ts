@@ -4262,10 +4262,10 @@ export type Index_PageQuery = { api: { reservation: Array<(
       & { client: Pick<Api_Guest, 'first_name' | 'last_name'> }
     )> } };
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+export type DataQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { site?: Maybe<Pick<Site, 'buildTime'>> };
+export type DataQuery = { site?: Maybe<Pick<Site, 'buildTime'>> };
 
 export type Reservation_IdQueryVariables = Exact<{
   id: Scalars['api_uuid'];
