@@ -29,4 +29,3 @@ jobs:
       # uses: bahmutov/npm-install@31bd3e6472a5b2d6121d78d4dc1ffa9eab86ea5b
       uses: bahmutov/npm-install@v1.1.0
     - run: yarn type-check
-    - run: yarn gatsby build
