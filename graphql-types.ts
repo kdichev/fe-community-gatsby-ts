@@ -4254,6 +4254,21 @@ export type StringQueryOperatorInput = {
   glob?: Maybe<Scalars['String']>;
 };
 
+export type Image_TestQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Image_TestQuery = { placeholderImage?: Maybe<{ childImageSharp?: Maybe<{ fluid?: Maybe<GatsbyImageSharpFluidFragment> }> }> };
+
+export type SiteTitleQueryQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SiteTitleQueryQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+
+export type SeoQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type SeoQuery = { site?: Maybe<{ siteMetadata?: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
+
 export type Index_PageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
