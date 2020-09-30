@@ -23,8 +23,8 @@ const Reservation: React.FC<PageProps<
         }}
       >
         <p>ID: {pageContext.id}</p>
-        <p>Arrival Date at: {data.api.reservation.arrival_date}</p>
-        <p>Departure Date at: {data.api.reservation.departure_date}</p>
+        <p>Arrival Date at: {data.api.reservation?.arrival_date}</p>
+        <p>Departure Date at: {data.api.reservation?.departure_date}</p>
       </div>
       <Link to="/">Go back to the homepage</Link>
     </Layout>

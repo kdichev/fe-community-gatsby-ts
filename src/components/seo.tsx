@@ -4,16 +4,16 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-
+// @ts-nocheck
 import * as React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import { SeoQuery } from "./../../graphql-types"
 
 const SEO: React.FC<{
-  description: string
-  lang: string
-  meta: { name: string; content: string }[]
+  description?: string
+  lang?: string
+  meta?: JSX.IntrinsicElements["meta"][]
   title: string
 }> = ({ description = "", lang = "en", meta = [], title }) => {
   const { site } = useStaticQuery<SeoQuery>(
@@ -30,8 +30,8 @@ const SEO: React.FC<{
     `
   )
 
-  const metaDescription = description || site.siteMetadata.description
-  const defaultTitle = site.siteMetadata?.title
+  const metaDescription = description || site?.siteMetadata?.description
+  const defaultTitle = site?.siteMetadata?.title
 
   return (
     <Helmet
@@ -39,7 +39,7 @@ const SEO: React.FC<{
         lang,
       }}
       title={title}
-      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
+      titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : undefined}
       meta={[
         {
           name: `description`,
@@ -63,7 +63,7 @@ const SEO: React.FC<{
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
+          content: site?.siteMetadata?.author || ``,
         },
         {
           name: `twitter:title`,
@@ -73,7 +73,7 @@ const SEO: React.FC<{
           name: `twitter:description`,
           content: metaDescription,
         },
-      ].concat(meta)}
+      ].concat(meta?.length > 0 ? meta : [])}
     />
   )
 }

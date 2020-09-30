@@ -17,7 +17,7 @@ export const createPages: GatsbyNode["createPages"] = async ({
       }
     }
   `)
-  data.api.reservation.map(({ id }) =>
+  data?.api.reservation.map(({ id }) =>
     actions.createPage({
       path: `/${id}`,
       component: path.resolve(`src/templates/reservation.tsx`),

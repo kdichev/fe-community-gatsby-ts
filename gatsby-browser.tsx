@@ -1,6 +1,6 @@
 import * as React from "react"
-import { GatsbyBrowser } from "gatsby"
+import { WrapRootElementNodeArgs } from "gatsby"
 
-export const wrapRootElement: GatsbyBrowser["wrapRootElement"] = ({
-  element,
-}) => <div>{element}</div>
+export const wrapRootElement = ({ element }: WrapRootElementNodeArgs) => (
+  <div>{element}</div>
+)

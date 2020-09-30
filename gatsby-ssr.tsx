@@ -1,6 +1,6 @@
 import * as React from "react"
-import { GatsbySSR } from "gatsby"
+import { WrapRootElementNodeArgs } from "gatsby"
 
-export const wrapRootElement: GatsbySSR["wrapRootElement"] = async ({
-  element,
-}) => <div>{element}</div>
+export const wrapRootElement = async ({ element }: WrapRootElementNodeArgs) => (
+  <div>{element}</div>
+)
