@@ -35,7 +35,17 @@ module.exports = {
         url: "http://localhost:8080/v1/graphql",
       },
     },
-    `gatsby-plugin-graphql-codegen`,
+    {
+      resolve: `gatsby-plugin-graphql-codegen`,
+      options: {
+        documentPaths: [
+          "./src/**/*.{ts,tsx}",
+          "gatsby-*.{ts,tsx}",
+          "./.cache/fragments/*.js",
+          "./node_modules/gatsby-*/**/*.js",
+        ],
+      },
+    },
     `gatsby-plugin-ts-config`,
   ],
 }

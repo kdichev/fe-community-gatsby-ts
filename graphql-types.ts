@@ -3860,6 +3860,7 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___typeName'
   | 'pluginCreator___pluginOptions___fieldName'
   | 'pluginCreator___pluginOptions___url'
+  | 'pluginCreator___pluginOptions___documentPaths'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___nodeAPIs'
   | 'pluginCreator___browserAPIs'
@@ -4064,6 +4065,7 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___typeName'
   | 'pluginOptions___fieldName'
   | 'pluginOptions___url'
+  | 'pluginOptions___documentPaths'
   | 'pluginOptions___pathCheck'
   | 'nodeAPIs'
   | 'browserAPIs'
@@ -4196,6 +4198,7 @@ export type SitePluginPluginOptions = {
   typeName?: Maybe<Scalars['String']>;
   fieldName?: Maybe<Scalars['String']>;
   url?: Maybe<Scalars['String']>;
+  documentPaths?: Maybe<Array<Maybe<Scalars['String']>>>;
   pathCheck?: Maybe<Scalars['Boolean']>;
 };
 
@@ -4216,6 +4219,7 @@ export type SitePluginPluginOptionsFilterInput = {
   typeName?: Maybe<StringQueryOperatorInput>;
   fieldName?: Maybe<StringQueryOperatorInput>;
   url?: Maybe<StringQueryOperatorInput>;
+  documentPaths?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
 };
 
@@ -4288,6 +4292,11 @@ export type Reservation_IdQueryVariables = Exact<{
 
 
 export type Reservation_IdQuery = { api: { reservation?: Maybe<Pick<Api_Reservation, 'arrival_date' | 'departure_date'>> } };
+
+export type Reservation_ListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type Reservation_ListQuery = { api: { reservation: Array<Pick<Api_Reservation, 'id'>> } };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

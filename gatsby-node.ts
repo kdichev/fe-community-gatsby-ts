@@ -1,14 +1,12 @@
 import { GatsbyNode } from "gatsby"
 import path from "path"
-import { Api_Reservation } from "./graphql-types"
+import { Reservation_ListQuery } from "./graphql-types"
 
 export const createPages: GatsbyNode["createPages"] = async ({
   actions,
   graphql,
 }) => {
-  const { data } = await graphql<{
-    api: { reservation: Array<Api_Reservation> }
-  }>(/* GraphQL */ `
+  const { data } = await graphql<Reservation_ListQuery>(/* GraphQL */ `
     query RESERVATION_LIST {
       api {
         reservation {
