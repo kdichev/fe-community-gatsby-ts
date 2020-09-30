@@ -13,7 +13,7 @@ exports.createPages = async ({ actions, graphql }) => {
   data.api.reservation.map(({ id }) =>
     actions.createPage({
       path: `/${id}`,
-      component: path.resolve(`src/templates/reservation.js`),
+      component: path.resolve(`src/templates/reservation.tsx`),
       context: { id },
     })
   )

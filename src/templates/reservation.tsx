@@ -1,10 +1,16 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-
+import { graphql, Link, PageProps } from "gatsby"
+import {
+  Reservation_IdQuery,
+  Reservation_IdQueryVariables,
+} from "./../../graphql-types"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const Reservation = ({ data, pageContext }) => {
+const Reservation: React.FC<PageProps<
+  Reservation_IdQuery,
+  Reservation_IdQueryVariables
+>> = ({ data, pageContext }) => {
   return (
     <Layout>
       <SEO title="Home" />
@@ -26,7 +32,7 @@ const Reservation = ({ data, pageContext }) => {
 }
 
 export const INDEX_QUERY = graphql`
-  query($id: api_uuid!) {
+  query RESERVATION_ID($id: api_uuid!) {
     api {
       reservation: reservation_by_pk(id: $id) {
         arrival_date

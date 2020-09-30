@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `Writing a gatsby project in TS`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
   },
@@ -35,5 +35,6 @@ module.exports = {
         url: "http://localhost:8080/v1/graphql",
       },
     },
+    `gatsby-plugin-graphql-codegen`,
   ],
 }
